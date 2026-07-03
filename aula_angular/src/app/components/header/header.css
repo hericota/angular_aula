@@ -1,0 +1,15 @@
+nav{
+    display: flex;
+    gap: 5px;
+}
+nav a{
+    border-radius: 7px;
+    text-decoration: none;
+    background-color: rgb(34, 34, 34);
+    color: rgb(0, 189, 0);
+    padding: 5px;
+    transition: all 0.5s;
+}
+.pagina-ativa{
+    scale: 105%;
+}

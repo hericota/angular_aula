@@ -11,7 +11,7 @@ export class MercadoComponent {
   UnidadeDeBlumenau: Mercado = {
     Nome: "Unidade de blumenau",
     Vendamacas: 1000,
-    precomacas: 1.50,
+    precomacas: 1.20,
     vendalaranja: 700,
     precolaranja: 2
   }
@@ -19,14 +19,14 @@ export class MercadoComponent {
     Nome: "Unidade de joinville",
     Vendamacas: 1000,
     precomacas: 1.50,
-    vendalaranja: 700,
-    precolaranja: 2
+    vendalaranja: 570,
+    precolaranja: 2.2
   }
   UnidadeDeFlorianopolis: Mercado = {
     Nome: "Unidade de florianopolis",
     Vendamacas: 1000,
     precomacas: 1.50,
-    vendalaranja: 700,
-    precolaranja: 2
+    vendalaranja: 450,
+    precolaranja: 2.5
   }
 }

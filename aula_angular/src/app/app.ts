@@ -1,13 +1,13 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { Valores } from './valores/valores';
+import { RouterOutlet, RouterLinkWithHref } from '@angular/router';
 import { EnderecoComponent } from "./endereco-component/endereco-component";
 import { PessoaComponent } from "./pessoa-component/pessoa-component";
 import { MercadoComponent } from "./mercado-component/mercado-component";
+import { Header } from "./components/header/header";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Valores, EnderecoComponent, PessoaComponent, MercadoComponent],
+  imports: [RouterOutlet, EnderecoComponent, PessoaComponent, MercadoComponent, RouterLinkWithHref, Header,],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
