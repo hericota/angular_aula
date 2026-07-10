@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EnderecoComponent } from './endereco-component';
+import { Navegation } from './navegation';
 
-describe('EnderecoComponent', () => {
-  let component: EnderecoComponent;
-  let fixture: ComponentFixture<EnderecoComponent>;
+describe('Navegation', () => {
+  let component: Navegation;
+  let fixture: ComponentFixture<Navegation>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [EnderecoComponent],
+      imports: [Navegation],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(EnderecoComponent);
+    fixture = TestBed.createComponent(Navegation);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
