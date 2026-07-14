@@ -1,7 +1,7 @@
 :host * {
     background-color: rgb(75, 75, 75);
     color: rgb(255, 255, 255);
-    min-height: 200px;
+    min-height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
