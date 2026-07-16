@@ -1,12 +1,19 @@
 import { Component } from '@angular/core';
-import { Navegation } from "../navegation/navegation";
+import { Navegation } from "./navegation/navegation";
 import {RouterOutlet } from '@angular/router';
+import { Header } from '../header/header';
+import { Footer } from '../footer/footer';
+
 
 
 @Component({
   selector: 'app-area-principal',
-  imports: [Navegation, RouterOutlet],
+  imports: [Navegation, RouterOutlet,Header,Footer,],
   templateUrl: './area-principal.html',
   styleUrl: './area-principal.css',
 })
-export class AreaPrincipal {}
+export class AreaPrincipal {
+  registrar_click(){
+    console.log("Você clicou")
+  }
+}

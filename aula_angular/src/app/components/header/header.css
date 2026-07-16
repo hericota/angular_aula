@@ -5,6 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 :host h1{
     font-size: 6rem;

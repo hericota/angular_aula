@@ -1,0 +1,6 @@
+<button [disabled]="desabilitado" (click)="registrar_click()"
+[class.habilitado]="!desabilitado"
+[class.nao-habilitado]="desabilitado">Botão</button>
+<button (click)="alternar_estado()">alterar estado</button>
+<input [(ngModel)]="texto">
+<p>{{ texto }}</p>

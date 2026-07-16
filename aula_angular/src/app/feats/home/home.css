@@ -1,4 +1,5 @@
 :host *{
     background-color: rgb(51, 51, 51);
     color: rgb(255, 255, 255);
+    height: 100%;
 }

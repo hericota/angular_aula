@@ -1,19 +1,21 @@
-:host {
+:host .area-flex{
     display: flex;
 }
-
+.conteudo-principal{
+  width: 100%;
+}
 
 @media (min-width: 600px) {
   :host #menu_lateral{
     flex-direction: column;
-    width: 10vw;
+    width: 15vw;
     height: 100vh;
   }
   :host #menu_lateral nav{
     height: 500px;
   }
   :host #conteudo-principal{
-    width: 90vw;
+    width: 100%;
     height: 100vh;
   }
   :host #menu_lateral{
@@ -21,7 +23,7 @@
   }
 }
 @media (max-width:600px){
-    :host{
+    :host .area-flex{
         flex-direction: column;
     }
     :host #menu_lateral{
@@ -29,7 +31,7 @@
 
     }
     :host #conteudo-principal{
-        width: 100vw;
+        width: 100%;
         height: 100vh;
     }
 }
