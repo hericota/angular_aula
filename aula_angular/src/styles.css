@@ -24,14 +24,12 @@ body {
     line-height: 1.5;
 }
 
-/* Make images and media responsive */
 img,
 picture {
     max-width: 100%;
     display: block;
 }
 
-/* Inherit fonts for inputs and buttons */
 input,
 button,
 textarea,
@@ -41,7 +39,4 @@ select {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-}
-@media (max-width: 600px) {
-    
 }
