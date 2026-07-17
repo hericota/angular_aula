@@ -1,12 +1,22 @@
 button{
     border-radius: 10px;
+    transition: all 1s;
 }
 .habilitado{
     border: 2px solid green;
-    transition: 0.5s;
-    scale: 1.05;
+    transition:border 1s;
+    transition: background,scale 1s;
 }
 .nao-habilitado{
     border: 2px solid red;
     transition: 0.5s;
+}
+.habilitado:hover{
+    background-color: rgb(191, 255, 179);
+    scale: 1.05;
+    transition: scale;
+    transition: background,scale, 1s;
+}
+.imagem{
+    width: 4rem;
 }
