@@ -1,6 +1,7 @@
 button{
     border-radius: 10px;
     transition: all 1s;
+    margin: 5px;
 }
 .habilitado{
     border: 2px solid green;
@@ -8,6 +9,7 @@ button{
     transition: background,scale 1s;
 }
 .nao-habilitado{
+    color:rgb(172, 151, 151);
     border: 2px solid red;
     transition: 0.5s;
 }

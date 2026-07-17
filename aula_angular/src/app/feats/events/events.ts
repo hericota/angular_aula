@@ -32,6 +32,6 @@ export class Events {
     this.media = ((Number(this.nota_1)+Number(this.nota_2)+Number(this.nota_3))/3)
     alert("sua media é "+ this.media.toFixed(2))
   }
-  comidas=["batata","salsicha","bacon"]
+  comidas=["batata","salsicha","bacon",]
 
 }

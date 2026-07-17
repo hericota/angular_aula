@@ -21,8 +21,8 @@
 }
 <ul>
     @for (comida of comidas; track $index) {
-        <li>{{comida}}</li>
+        <li>comidas: {{comida}}</li>
     }@empty{
-        <p>fim da lista</p>
+        <p>Lista vazia</p>
     }
 </ul>
