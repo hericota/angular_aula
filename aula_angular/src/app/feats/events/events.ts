@@ -24,14 +24,29 @@ export class Events {
   registrar_click(){
     alert(this.texto)
   }
-  nota_1!: number;
-  nota_2!: number;
-  nota_3!: number;
-  media!:number;
+  protected nota_1!: number;
+  protected nota_2!: number;
+  protected nota_3!: number;
+  protected media!:number;
   media_nota(){
     this.media = ((Number(this.nota_1)+Number(this.nota_2)+Number(this.nota_3))/3)
     alert("sua media é "+ this.media.toFixed(2))
   }
   comidas=["batata","salsicha","bacon",]
-
+  protected contador=0
+  inclementar(){
+    this.contador+=1;
+  }
+  resetar(){
+    this.contador=0;
+  }
+  estado_login="deslogado"
+  deslogar(){
+    this.estado_login="deslogado"
+  }
+  logar(){
+    this.estado_login="logado"
+  }
+  protected url_imagem:string="";
 }
+

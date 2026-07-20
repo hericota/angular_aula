@@ -3,6 +3,10 @@ button{
     transition: all 1s;
     margin: 5px;
 }
+button:hover{
+    cursor: pointer;
+    scale: 1.05;
+}
 .habilitado{
     border: 2px solid green;
     transition:border 1s;
@@ -21,4 +25,19 @@ button{
 }
 .imagem{
     width: 4rem;
+}
+#imagem_atividade_10{
+    width: 6rem;
+}
+#contador{
+    padding: 6px;
+    border: 2px solid black;
+    border-radius: 10px;
+    justify-self: center;
+    align-self: center;
+    transition: all 0.5s;
+}
+#contador:hover{
+    cursor: pointer;
+    scale: 1.05;
 }

@@ -1,6 +1,5 @@
-<button [disabled]="desabilitado" (click)="registrar_click()"
-[class.habilitado]="!desabilitado"
-[class.nao-habilitado]="desabilitado">Botão</button>
+<button [disabled]="desabilitado" (click)="registrar_click()" [class.habilitado]="!desabilitado"
+    [class.nao-habilitado]="desabilitado">Botão</button>
 <button (click)="alternar_estado()">alterar estado</button>
 <input [(ngModel)]="texto">
 <p>{{ texto }}</p>
@@ -9,20 +8,36 @@
 <input [(ngModel)]="nota_3">
 <button (click)="media_nota()">Confirmar notas</button>
 @if (media>=7) {
-    <h3>Passou</h3> <img class="imagem" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQj_pYVW3NWWdODlnN390JVKJ8OVj96xmjDvQX7c6zFq2IQY-nklZRarU&s=10" alt="">
+<h3>Passou</h3> <img class="imagem"
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQj_pYVW3NWWdODlnN390JVKJ8OVj96xmjDvQX7c6zFq2IQY-nklZRarU&s=10"
+    alt="">
 }
-@else if (media<7) {
-    <h3>Reprovou</h3>
+@else if (media<7) { <h3>Reprovou</h3>
     <img class="imagem" src="https://cdn-icons-png.flaticon.com/512/12786/12786663.png" alt="">
-}
-@else {
-    <h3>Valores ausentes ou invalidos</h3>
-    <img class="imagem" src="https://static.vecteezy.com/system/resources/thumbnails/012/042/292/small/warning-sign-icon-transparent-background-free-png.png" alt="">
-}
-<ul>
-    @for (comida of comidas; track $index) {
-        <li>comidas: {{comida}}</li>
-    }@empty{
-        <p>Lista vazia</p>
     }
-</ul>
+    @else {
+    <h3>Valores ausentes ou invalidos</h3>
+    <img class="imagem"
+        src="https://static.vecteezy.com/system/resources/thumbnails/012/042/292/small/warning-sign-icon-transparent-background-free-png.png"
+        alt="">
+    }
+    <ul>
+        @for (comida of comidas; track $index) {
+        <li>comidas: {{comida}}</li>
+        }@empty{
+        <p>Lista vazia</p>
+        }
+    </ul>
+    <h3 id="contador" (click)="resetar()">{{contador}}</h3><button (click)="inclementar()">inclementar</button>
+
+    <h3>Você esta atualmente {{estado_login}}</h3>
+    @if (estado_login=="logado") {
+    <button (click)="deslogar()">deslogar</button>
+    }
+    @else {
+    <button (click)="logar()">logar</button>
+    }
+
+    <input [(ngModel)]="url_imagem">
+
+    <img id="imagem_atividade_10" src={{url_imagem}} alt="">
