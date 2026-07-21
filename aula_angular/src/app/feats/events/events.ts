@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -8,45 +8,49 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './events.css',
 })
 export class Events {
-  desabilitado = true;
-  alternar_estado(){
-    if(this.desabilitado==true){
-      this.desabilitado=false
+
+  desabilitado = signal(true);
+  alternar_estado() {
+    if (this.desabilitado()) {
+      this.desabilitado.update(current => false);
     }
-    else if(this.desabilitado==false){
-      this.desabilitado=true
+    else if (this.desabilitado() == false) {
+      this.desabilitado.update(current=>true)
     }
-    else{
-      let desabilitado=true
+    else {
+      let desabilitado = true
     }
   }
-  texto: string = '';
-  registrar_click(){
+
+  
+  protected texto: string = '';
+  registrar_click() {
     alert(this.texto)
   }
-  protected nota_1!: number;
-  protected nota_2!: number;
-  protected nota_3!: number;
-  protected media!:number;
-  media_nota(){
-    this.media = ((Number(this.nota_1)+Number(this.nota_2)+Number(this.nota_3))/3)
-    alert("sua media é "+ this.media.toFixed(2))
+  protected nota_1= signal(0);
+  protected nota_2= signal(0);
+  protected nota_3= signal(0);
+  protected media= signal(0);
+  media_nota() {
+    this.media.update(current => (Number(this.nota_1()) + Number(this.nota_2()) + Number(this.nota_3())) / 3)
+    alert("sua media é " + this.media().toFixed(2))
   }
-  comidas=["batata","salsicha","bacon",]
-  protected contador=0
-  inclementar(){
-    this.contador+=1;
+  comidas = signal(["batata", "salsicha", "bacon",]);
+  protected contador = signal(0);
+  protected fator_soma = signal(1);
+  inclementar() {
+    this.contador.update(current => current + this.fator_soma());
   }
-  resetar(){
-    this.contador=0;
+  resetar() {
+    this.contador.update(current => current = 0);
   }
-  estado_login="deslogado"
-  deslogar(){
-    this.estado_login="deslogado"
+  estado_login = signal("deslogado");
+  deslogar() {
+    this.estado_login.update(current=>"deslogado");
   }
-  logar(){
-    this.estado_login="logado"
+  logar() {
+    this.estado_login.update(current=>"logado");
   }
-  protected url_imagem:string="";
+  protected url_imagem= signal("");
 }
 

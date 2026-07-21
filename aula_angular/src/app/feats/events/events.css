@@ -30,14 +30,25 @@ button:hover{
     width: 6rem;
 }
 #contador{
-    padding: 6px;
+    display: flex;
+    padding: 5px;
+    align-content: center;
+    justify-content: center;
     border: 2px solid black;
-    border-radius: 10px;
+    border-radius: 15px;
     justify-self: center;
     align-self: center;
     transition: all 0.5s;
 }
 #contador:hover{
     cursor: pointer;
-    scale: 1.05;
+}
+#inclementar{
+    display: flex;
+    justify-self: center;
+    align-self: center;
+}
+.contador{
+    display: flex;
+    flex-direction: line;
 }
