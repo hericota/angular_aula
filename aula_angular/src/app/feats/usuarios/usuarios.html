@@ -1,7 +1,10 @@
 @for (user of usuarios(); track user.id) {
-    <div class="usuarios">
+
+    <div id="cards">
+<div class="usuarios">
     <p id="idUsuario">id:{{user.id}}</p>
     <p id="nomeUsuario">nome:{{user.nome}}</p>
     <p id="idadeUsuario">idade:{{user.idade}}</p>
+</div>
 </div>
 }
