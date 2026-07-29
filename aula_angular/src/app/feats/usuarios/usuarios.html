@@ -1,10 +1,10 @@
-@for (user of usuarios(); track user.id) {
+<div id="cards">
+    @for (user of usuarios(); track user.id) {
 
-    <div id="cards">
-<div class="usuarios">
-    <p id="idUsuario">id:{{user.id}}</p>
-    <p id="nomeUsuario">nome:{{user.nome}}</p>
-    <p id="idadeUsuario">idade:{{user.idade}}</p>
+    <div class="usuarios">
+        <p class="idUsuario">id:{{user.id}}</p>
+        <p class="nomeUsuario">nome:{{user.nome}}</p>
+        <p class="idadeUsuario">idade:{{user.idade}}</p>
+    </div>
+    }
 </div>
-</div>
-}
