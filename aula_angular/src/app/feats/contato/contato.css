@@ -4,20 +4,34 @@ nav{
     gap: 50px;
     justify-self: center;
     margin-top: 30px;
+    background-color: aquamarine;
+    padding: 150px;
+    border-radius: 20px;
+    transition: 1s;
+    border: 2px rgba(0, 0, 0, 0.582) solid;
+}
+nav:hover{
+    box-shadow:0 8px 16px 0 rgba(0,0,0,0.6);
+    transform: translateY(-10px);
+    transition: 1s;
 }
 nav a{
     padding: 15px;
-    background-color: rgb(221, 249, 255);
+    background-color: rgb(175, 250, 255);
     border-radius: 15px;
-    border: 2px black solid;
+    border: 2px rgba(0, 0, 0, 0.575) solid;
     transition: 1s;
     text-decoration: none;
     color: black;
 }
 nav a:hover{
-    background-color: rgb(137, 233, 222);
+    background-color: rgb(162, 255, 244);
     box-shadow:0 8px 16px 0 rgba(0,0,0,0.6);
     transform: translateY(-10px);
-
+    cursor: ;
+    transition: 1s;
+}
+nav a:active{
+    background-color: rgb(221, 253, 255);
     transition: 1s;
 }
