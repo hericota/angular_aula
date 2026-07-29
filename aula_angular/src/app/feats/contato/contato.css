@@ -1,0 +1,23 @@
+nav{
+    display: flex;
+    font-size: 3rem;  
+    gap: 50px;
+    justify-self: center;
+    margin-top: 30px;
+}
+nav a{
+    padding: 15px;
+    background-color: rgb(221, 249, 255);
+    border-radius: 15px;
+    border: 2px black solid;
+    transition: 1s;
+    text-decoration: none;
+    color: black;
+}
+nav a:hover{
+    background-color: rgb(117, 218, 207);
+    transform: scale(1.01);
+
+
+    transition: 1s;
+}
