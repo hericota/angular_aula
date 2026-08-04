@@ -25,6 +25,31 @@ export class Usuarios {
       nome: "henricão",
       idade: 100
     },
+    {
+      id: 2,
+      nome: "henricão",
+      idade: 100
+    },
+    {
+      id: 2,
+      nome: "henricão",
+      idade: 100
+    },
+    {
+      id: 2,
+      nome: "henricão",
+      idade: 100
+    },
+    {
+      id: 2,
+      nome: "henricão",
+      idade: 100
+    },
+    {
+      id: 2,
+      nome: "henricão",
+      idade: 100
+    },
   ]);
 
   adicionarUsuario() {

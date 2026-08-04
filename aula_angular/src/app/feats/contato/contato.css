@@ -3,8 +3,7 @@ nav{
     font-size: 3rem;  
     gap: 50px;
     justify-self: center;
-    margin-top: 30px;
-    background-color: aquamarine;
+    background-color: rgb(29, 29, 29);
     padding: 150px;
     border-radius: 20px;
     transition: 1s;
@@ -17,19 +16,20 @@ nav:hover{
 }
 nav a{
     padding: 15px;
-    background-color: rgb(175, 250, 255);
+    background-color: rgb(63, 63, 63);
     border-radius: 15px;
     border: 2px rgba(0, 0, 0, 0.575) solid;
     transition: 1s;
     text-decoration: none;
-    color: black;
+    color: rgb(190, 190, 190);
 }
 nav a:hover{
-    background-color: rgb(162, 255, 244);
-    box-shadow:0 8px 16px 0 rgba(0,0,0,0.6);
+    background-color: rgb(48, 235, 57);
+    box-shadow:0 8px 16px 0 rgba(22, 204, 16, 0.6);
     transform: translateY(-10px);
-    cursor: ;
+    cursor:pointer;
     transition: 1s;
+    color: black;
 }
 nav a:active{
     background-color: rgb(221, 253, 255);

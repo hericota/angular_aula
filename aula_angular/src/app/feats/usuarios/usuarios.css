@@ -1,23 +1,58 @@
-.usuarios{
+:host{
     background-color: black;
-    color: white;
-    margin-top: 10px;
-    width: auto;
-    padding: 20px;
-    border-radius: 10px;
-    font-size: 1.6rem
-
+}
+body{
+    background-color: black;
+}
+.usuarios{
+    background-color: rgb(32, 32, 32);
+    border-radius: 15px;
+    border: 2px rgba(0, 0, 0, 0.575) solid;
+    transition: 1s;
+    text-decoration: none;
+    color: rgb(190, 190, 190);
+    font-size: 2.2rem;
+}
+.usuarios:hover{
+    background-color: rgb(48, 235, 57);
+    box-shadow:0 8px 16px 0 rgba(22, 204, 16, 0.6);
+    transform: translateY(-10px);
+    transition: 1s;
+    color: black;
 }
 #cards{
-    margin-left: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 20px;
     gap: 20px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
     align-content: center;
+    margin-bottom: 10px;
 }
 .formularioCadastro{
     justify-self: center;
     margin-bottom: 50px;
     margin-top: 20px;
+}
+.formularioCadastro input{
+    margin-left: 10px;
+    height: 50px;
+    width: 300px;
+    font-size: 1.5rem;
+    justify-self: center;
+}
+.formularioCadastro button{
+    margin-left: 10px;
+    height: 50px;
+    justify-self: center;
+    padding-top: 5px;
+
+}
+.formularioCadastro button:hover{
+    cursor:pointer;
 }
