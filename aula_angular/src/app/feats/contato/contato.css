@@ -2,6 +2,7 @@ nav{
     display: flex;
     font-size: 3rem;  
     gap: 50px;
+    margin-top: 20px;
     justify-self: center;
     background-color: rgb(29, 29, 29);
     padding: 150px;
@@ -15,22 +16,25 @@ nav:hover{
     transition: 1s;
 }
 nav a{
+    border-radius: 5px;
     padding: 15px;
-    background-color: rgb(63, 63, 63);
-    border-radius: 15px;
-    border: 2px rgba(0, 0, 0, 0.575) solid;
-    transition: 1s;
+    background-color: rgb(48, 235, 57);
+    transition: 1s linear;
     text-decoration: none;
     color: rgb(190, 190, 190);
+    box-shadow: 0px 8px 16px 0px rgba(22, 204, 16, 0.6);
+
 }
-nav a:hover{
-    background-color: rgb(48, 235, 57);
-    box-shadow:0 8px 16px 0 rgba(22, 204, 16, 0.6);
+nav a:not(:hover){
+    box-shadow: 0px 8px 16px 0px rgba(22, 204, 16, 0);
+    border-radius: 5px;
+    background-color: rgb(63, 63, 63);
     transform: translateY(-10px);
     cursor:pointer;
     transition: 1s;
     color: black;
 }
+
 nav a:active{
     background-color: rgb(221, 253, 255);
     transition: 1s;

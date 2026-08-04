@@ -24,7 +24,7 @@ button:hover{
     transition: background,scale, 1s;
 }
 .imagem{
-    width: 4rem;
+    width: 200px;
 }
 #imagem_atividade_10{
     width: 6rem;
