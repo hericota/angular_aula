@@ -1,7 +1,7 @@
-<form>
+<form (submit)="cadastrarProduto($event)">
     <label>
         Nome do produto
-        <input type="text" [formField]="produtoMarket.titulo">
+        <input type="text" (input)="cardTrueOrFalse()" [formField]="produtoMarket.titulo">
     </label>
     <label>
         Descrição do produto
@@ -11,10 +11,13 @@
         Preço do produto
         <input type="number" inputmode="numeric" [formField]="produtoMarket.preco">
     </label>
+    <button onclick="cadastroBotao()">cadastrarProduto</button>
 
 </form>
-
-
-<h2><strong>{{ produtoMarket.titulo().value() }}</strong></h2>
-<h3>{{ produtoMarket.descricao().value() }}</h3>
-<h2></h2>
+@if (card_criado()) {
+<div class="produto">
+    <h2 id="titulo"><strong>{{ produtoMarket.titulo().value() }}</strong></h2>
+    <h3 id="descricao">{{ produtoMarket.descricao().value() }}</h3>
+    <h1 id="preco">{{ produtoMarket.preco().value() }} R$</h1>
+</div>
+}
