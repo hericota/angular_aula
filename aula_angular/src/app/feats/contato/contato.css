@@ -9,6 +9,7 @@ nav {
     border-radius: 20px;
     transition: 1s;
     border: 2px rgba(0, 0, 0, 0.582) solid;
+    max-width: 100vw;
 }
 
 nav:hover {

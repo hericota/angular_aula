@@ -1,0 +1,20 @@
+<form>
+    <label>
+        Nome do produto
+        <input type="text" [formField]="produtoMarket.titulo">
+    </label>
+    <label>
+        Descrição do produto
+        <input type="text" [formField]="produtoMarket.descricao">
+    </label>
+    <label>
+        Preço do produto
+        <input type="number" inputmode="numeric" [formField]="produtoMarket.preco">
+    </label>
+
+</form>
+
+
+<h2><strong>{{ produtoMarket.titulo().value() }}</strong></h2>
+<h3>{{ produtoMarket.descricao().value() }}</h3>
+<h2></h2>
