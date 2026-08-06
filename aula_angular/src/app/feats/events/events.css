@@ -1,7 +1,10 @@
+input{
+    margin-left: 5px
+}
 button{
     border-radius: 10px;
     transition: all 1s;
-    margin: 5px;
+    margin-left: 5px;
 }
 button:hover{
     cursor: pointer;
@@ -30,6 +33,7 @@ button:hover{
     width: 6rem;
 }
 #contador{
+    margin-left: 10px;
     display: flex;
     padding: 5px;
     align-content: center;

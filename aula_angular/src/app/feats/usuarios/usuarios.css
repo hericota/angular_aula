@@ -12,6 +12,7 @@ body{
     text-decoration: none;
     color: rgb(190, 190, 190);
     font-size: 2.2rem;
+    max-height: 250px;
 }
 .usuarios:hover{
     background-color: rgb(48, 235, 57);
@@ -21,6 +22,7 @@ body{
     color: black;
 }
 #cards{
+    min-height: 500px;
     margin-left: 10px;
     margin-right: 10px;
     background-color: rgb(0, 0, 0);
@@ -31,7 +33,6 @@ body{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
-    align-content: center;
     margin-bottom: 10px;
 }
 .formularioCadastro{
@@ -55,4 +56,8 @@ body{
 }
 .formularioCadastro button:hover{
     cursor:pointer;
+}
+h3{
+    justify-self: center;
+    font-size: 3rem;
 }

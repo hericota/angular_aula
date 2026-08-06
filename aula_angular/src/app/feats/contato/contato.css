@@ -1,6 +1,6 @@
-nav{
+nav {
     display: flex;
-    font-size: 3rem;  
+    font-size: 3rem;
     gap: 50px;
     margin-top: 20px;
     justify-self: center;
@@ -10,32 +10,51 @@ nav{
     transition: 1s;
     border: 2px rgba(0, 0, 0, 0.582) solid;
 }
-nav:hover{
-    box-shadow:0 8px 16px 0 rgba(0,0,0,0.6);
+
+nav:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
     transform: translateY(-10px);
     transition: 1s;
 }
-nav a{
+
+nav a {
     border-radius: 5px;
     padding: 15px;
     background-color: rgb(48, 235, 57);
     transition: 1s linear;
     text-decoration: none;
-    color: rgb(190, 190, 190);
+    color: rgb(65, 65, 65);
     box-shadow: 0px 8px 16px 0px rgba(22, 204, 16, 0.6);
 
 }
-nav a:not(:hover){
+nav a span{
+    transition: 1s;
+}
+
+nav a:hover span{
+    color: #FFFFFF;
+    background: transparent;
+    text-shadow: 0 0 5px #ddffc7, 0 0 10px #c4ffa9, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
+    color: #fffdfd;
+}
+
+nav a:not(:hover) {
     box-shadow: 0px 8px 16px 0px rgba(22, 204, 16, 0);
     border-radius: 5px;
     background-color: rgb(63, 63, 63);
     transform: translateY(-10px);
-    cursor:pointer;
+    cursor: pointer;
     transition: 1s;
     color: black;
 }
 
-nav a:active{
-    background-color: rgb(221, 253, 255);
+nav a:active {
     transition: 1s;
+    transform: scale(0.95);
+}
+nav a:active span{
+    color: #efffeb;
+    background: transparent;
+    text-shadow: 0 0 5px #cdffab, 0 0 10px #cdffab, 0 0 15px #cdffab, 0 0 20px #cdffab, 0 0 30px #cdffab, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
+    color: #50be4c;
 }
