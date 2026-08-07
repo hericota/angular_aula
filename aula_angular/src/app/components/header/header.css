@@ -1,12 +1,14 @@
 :host * {
-    background-color: rgb(75, 75, 75);
+    background-color: rgb(29, 29, 29);
     color: rgb(255, 255, 255);
     min-height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
+    border-bottom: 2px solid rgb(48, 235, 57);
 }
 :host h1{
     font-size: 6rem;
+    text-shadow: 0 0 20px rgba(48, 235, 57, 0.4);
 }

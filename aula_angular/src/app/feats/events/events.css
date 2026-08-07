@@ -1,72 +1,158 @@
-:host *{
-    margin-left: 5px;
+:host {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.pagina-eventos {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+    max-width: 900px;
+    padding: 30px 20px;
+}
+
+.cartao {
+    background-color: rgb(29, 29, 29);
+    border: 2px solid rgba(0, 0, 0, 0.582);
+    border-radius: 20px;
+    padding: 25px 30px;
+    transition: 1s;
+}
+
+.cartao:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 16px 0 rgba(22, 204, 16, 0.4);
+    transition: 1s;
+}
+
+.titulo-secao {
+    color: rgb(48, 235, 57);
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.pagina-eventos p,
+.pagina-eventos h3:not(.titulo-secao),
+.pagina-eventos li {
+    color: rgb(220, 220, 220);
+}
+
+.pagina-eventos ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.pagina-eventos input {
+    background-color: rgb(48, 48, 48);
+    border: 2px solid rgba(0, 0, 0, 0.582);
+    border-radius: 8px;
+    color: white;
+    padding: 10px;
+    margin: 5px 5px 5px 0;
+}
+
+.pagina-eventos input::placeholder {
+    color: rgb(150, 150, 150);
+}
+
+.pagina-eventos button {
+    border-radius: 8px;
+    padding: 10px 18px;
+    background-color: rgb(48, 235, 57);
+    border: none;
+    color: rgb(29, 29, 29);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 1s;
+    margin: 5px 5px 5px 0;
+}
+
+.pagina-eventos button:hover:not([disabled]) {
+    box-shadow: 0px 8px 16px 0px rgba(22, 204, 16, 0.6);
+    transform: translateY(-4px);
+    transition: 1s;
+}
+
+.pagina-eventos button[disabled] {
+    background-color: rgb(80, 80, 80);
+    color: rgb(150, 150, 150);
+    cursor: not-allowed;
+}
+
+.habilitado {
+    border: 2px solid rgb(48, 235, 57);
+}
+
+.nao-habilitado {
+    border: 2px solid rgb(220, 70, 70);
+    color: rgb(220, 220, 220);
+}
+
+.linha {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.resultado {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.imagem {
+    width: 120px;
+    border-radius: 10px;
+}
+
+#imagem_atividade_10 {
+    width: 6rem;
+    border-radius: 8px;
     margin-top: 10px;
 }
-button{
-    border-radius: 10px;
-    transition: all 1s;
-    margin-left: 5px;
+
+#contador {
+    display: flex;
+    padding: 10px 20px;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgb(48, 235, 57);
+    border-radius: 15px;
+    color: white;
+    width: fit-content;
+    transition: all 0.5s;
+    cursor: pointer;
 }
-.batata{
-    padding: 10px;
-    justify-self: center;
+
+.contador {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.batata {
     align-self: center;
-}
-.batata:not(:hover){
-    filter: blur(50%);
+    padding: 15px 25px;
+    border-radius: 12px;
     background-color: rgb(0, 42, 78);
     color: white;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    transition: 1s;
+}
 
-}
-button:not([disabled]):hover{
-    cursor: pointer;
-    scale: 1.05;
-}
-.habilitado{
-    border: 2px solid green;
-    transition:border 1s;
-    transition: background,scale 1s;
-}
-.nao-habilitado{
-    color:rgb(172, 151, 151);
-    border: 2px solid red;
-    transition: 0.5s;
-}
-.habilitado:hover{
-    background-color: rgb(191, 255, 179);
-    scale: 1.05;
-    transition: scale;
-    transition: background,scale, 1s;
-}
-.imagem{
-    width: 200px;
-}
-#imagem_atividade_10{
-    width: 6rem;
-}
-#contador{
-    display: flex;
-    padding: 5px;
-    align-content: center;
-    justify-content: center;
-    border: 2px solid black;
-    border-radius: 15px;
-    justify-self: center;
-    align-self: center;
-    transition: all 0.5s;
-}
-#contador:hover{
-    cursor: pointer;
-}
-#inclementar{
-    display: flex;
-    justify-self: center;
-    align-self: center;
-}
-.contador{
-    display: flex;
-    flex-direction: line;
-}
-div:not(h3){
-    
+.batata:hover {
+    box-shadow: 0 8px 16px 0 rgba(22, 204, 16, 0.4);
+    transform: translateY(-4px);
 }

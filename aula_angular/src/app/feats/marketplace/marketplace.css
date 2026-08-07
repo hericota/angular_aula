@@ -1,8 +1,71 @@
-body {
-    margin: 0;
-    padding: 40px;
-    background: #f3f4f6;
-    font-family: Arial, Helvetica, sans-serif;
+:host {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.pagina-marketplace {
+    width: 100%;
+    max-width: 500px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formulario-produto {
+    width: 100%;
+    background-color: rgb(29, 29, 29);
+    border: 2px solid rgba(0, 0, 0, 0.582);
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    transition: 1s;
+}
+
+.formulario-produto:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 16px 0 rgba(22, 204, 16, 0.4);
+    transition: 1s;
+}
+
+.formulario-produto label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: rgb(200, 200, 200);
+    font-size: 0.95rem;
+}
+
+.formulario-produto input {
+    background-color: rgb(48, 48, 48);
+    border: 2px solid rgba(0, 0, 0, 0.582);
+    border-radius: 8px;
+    color: white;
+    padding: 12px;
+    font-size: 1rem;
+}
+
+.formulario-produto button {
+    margin-top: 10px;
+    border-radius: 8px;
+    padding: 14px;
+    background-color: rgb(48, 235, 57);
+    border: none;
+    color: rgb(29, 29, 29);
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 1s;
+    box-shadow: 0px 8px 16px 0px rgba(22, 204, 16, 0.3);
+}
+
+.formulario-produto button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 8px 16px 0px rgba(22, 204, 16, 0.6);
+    transition: 1s;
 }
 
 .produto {
@@ -10,31 +73,30 @@ body {
     flex-direction: column;
     justify-content: space-between;
 
-    width: 320px;
-    min-height: 380px;
+    width: 100%;
+    min-height: 320px;
 
-    margin: 30px auto;
+    margin-top: 30px;
     padding: 24px;
 
-    background: linear-gradient(145deg, #1f2937, #111827);
-    color: #fff;
+    background-color: rgb(29, 29, 29);
+    border: 2px solid rgba(0, 0, 0, 0.582);
+    border-radius: 20px;
 
-    border-radius: 18px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-
-    transition: transform .25s ease, box-shadow .25s ease;
+    transition: 1s;
 }
 
 .produto:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px 0 rgba(22, 204, 16, 0.6);
+    transition: 1s;
 }
 
 #titulo {
     margin: 0;
     font-size: 1.8rem;
     text-align: center;
-    color: #60a5fa;
+    color: rgb(48, 235, 57);
     word-break: break-word;
 }
 
@@ -42,7 +104,7 @@ body {
     margin: 20px 0;
     flex: 1;
 
-    color: #d1d5db;
+    color: rgb(200, 200, 200);
     font-size: 1rem;
     line-height: 1.6;
     text-align: justify;
@@ -58,7 +120,7 @@ body {
     font-size: 2rem;
     font-weight: bold;
 
-    color: #22c55e;
-    background: rgba(255, 255, 255, 0.08);
+    color: rgb(48, 235, 57);
+    background: rgba(48, 235, 57, 0.1);
     border-radius: 12px;
 }

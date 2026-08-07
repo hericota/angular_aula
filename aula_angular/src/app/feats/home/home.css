@@ -1,5 +1,41 @@
-:host *{
-    background-color: rgb(51, 51, 51);
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100%;
+    padding: 40px 20px;
+}
+
+.home-hero {
+    background-color: rgb(29, 29, 29);
+    border: 2px solid rgba(0, 0, 0, 0.582);
+    border-radius: 20px;
+    padding: 80px 100px;
+    text-align: center;
+    max-width: 90vw;
+    transition: 1s;
+}
+
+.home-hero:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px 0 rgba(22, 204, 16, 0.6);
+    transition: 1s;
+}
+
+.home-hero h2 {
+    font-size: 3rem;
     color: rgb(255, 255, 255);
-    height: 100%;
+    margin-bottom: 20px;
+}
+
+.home-hero h2 span {
+    color: rgb(48, 235, 57);
+    text-shadow: 0 0 10px rgba(48, 235, 57, 0.5), 0 0 20px rgba(48, 235, 57, 0.3);
+}
+
+.home-hero p {
+    color: rgb(190, 190, 190);
+    font-size: 1.3rem;
+    max-width: 600px;
 }

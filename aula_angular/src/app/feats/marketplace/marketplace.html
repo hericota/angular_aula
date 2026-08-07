@@ -1,46 +1,50 @@
-<form (submit)="cadastrarProduto($event)">
+<div class="pagina-marketplace">
 
-  <label>
-    Nome do produto
-    <input
-      type="text"
-      (input)="cardTrueOrFalse()"
-      [formField]="produtoMarket.titulo">
-  </label>
+  <form class="formulario-produto" (submit)="cadastrarProduto($event)">
 
-  <label>
-    Descrição do produto
-    <input
-      type="text"
-      [formField]="produtoMarket.descricao">
-  </label>
+    <label>
+      Nome do produto
+      <input
+        type="text"
+        (input)="cardTrueOrFalse()"
+        [formField]="produtoMarket.titulo">
+    </label>
 
-  <label>
-    Preço do produto
-    <input
-      type="number"
-      inputmode="numeric"
-      [formField]="produtoMarket.preco">
-  </label>
+    <label>
+      Descrição do produto
+      <input
+        type="text"
+        [formField]="produtoMarket.descricao">
+    </label>
 
-  <button type="submit">
-    Cadastrar Produto
-  </button>
+    <label>
+      Preço do produto
+      <input
+        type="number"
+        inputmode="numeric"
+        [formField]="produtoMarket.preco">
+    </label>
 
-</form>
+    <button type="submit">
+      Cadastrar Produto
+    </button>
 
-@if (card_criado()) {
-  <div class="produto">
-    <h2 id="titulo">
-      <strong>{{ produtoCadastrado()?.titulo }}</strong>
-    </h2>
+  </form>
 
-    <h3 id="descricao">
-      {{ produtoCadastrado()?.descricao }}
-    </h3>
+  @if (card_criado()) {
+    <div class="produto">
+      <h2 id="titulo">
+        <strong>{{ produtoCadastrado()?.titulo }}</strong>
+      </h2>
 
-    <h1 id="preco">
-      {{ produtoCadastrado()?.preco }} R$
-    </h1>
-  </div>
-}
+      <h3 id="descricao">
+        {{ produtoCadastrado()?.descricao }}
+      </h3>
+
+      <h1 id="preco">
+        {{ produtoCadastrado()?.preco }} R$
+      </h1>
+    </div>
+  }
+
+</div>

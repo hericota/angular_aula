@@ -1,47 +1,90 @@
-<button [disabled]="desabilitado()" (click)="registrar_click()" [class.habilitado]="!desabilitado()"
-    [class.nao-habilitado]="desabilitado()">Botão</button>
-<button (click)="alternar_estado()">alterar estado</button>
-<input [(ngModel)]="texto">
-<p>{{ texto }}</p>
-<input [(ngModel)]="nota_1">
-<input [(ngModel)]="nota_2">
-<input [(ngModel)]="nota_3">
-<button (click)="media_nota()">Confirmar notas</button>
-@if (media()>=7) {
-<h3>Passou</h3> <img class="imagem" id="kid_img"
-    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQj_pYVW3NWWdODlnN390JVKJ8OVj96xmjDvQX7c6zFq2IQY-nklZRarU&s=10"
-    alt="">
-}
-@else if (media()<7) { <h3>Reprovou</h3>
-    <img class="imagem" src="https://cdn-icons-png.flaticon.com/512/12786/12786663.png" alt="">
-    }
-    @else {
-    <h3>Valores ausentes ou invalidos</h3>
-    <img class="imagem"
-        src="https://static.vecteezy.com/system/resources/thumbnails/012/042/292/small/warning-sign-icon-transparent-background-free-png.png"
-        alt="">
-    }
-    <ul>
-        @for (comida of comidas(); track $index) {
-        <li>comidas: {{comida}}</li>
-        }@empty{
-        <p>Lista vazia</p>
+<div class="pagina-eventos">
+
+    <section class="cartao">
+        <h3 class="titulo-secao">Controle de botão</h3>
+        <div class="linha">
+            <button [disabled]="desabilitado()" (click)="registrar_click()" [class.habilitado]="!desabilitado()"
+                [class.nao-habilitado]="desabilitado()">Botão</button>
+            <button (click)="alternar_estado()">alterar estado</button>
+        </div>
+    </section>
+
+    <section class="cartao">
+        <h3 class="titulo-secao">Texto reativo</h3>
+        <input [(ngModel)]="texto" placeholder="Digite algo">
+        <p>{{ texto }}</p>
+    </section>
+
+    <section class="cartao">
+        <h3 class="titulo-secao">Média de notas</h3>
+        <div class="linha">
+            <input [(ngModel)]="nota_1" placeholder="Nota 1">
+            <input [(ngModel)]="nota_2" placeholder="Nota 2">
+            <input [(ngModel)]="nota_3" placeholder="Nota 3">
+            <button (click)="media_nota()">Confirmar notas</button>
+        </div>
+
+        @if (media()>=7) {
+        <div class="resultado">
+            <h3>Passou</h3>
+            <img class="imagem" id="kid_img"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQj_pYVW3NWWdODlnN390JVKJ8OVj96xmjDvQX7c6zFq2IQY-nklZRarU&s=10"
+                alt="">
+        </div>
         }
-    </ul>
-    <div class="contador">
-    <h3 id="contador" (click)="resetar()">{{contador()}}</h3>
-    <button id="inclementar" (click)="inclementar()">inclementar</button>
-    <input [(ngModel)]="fator_soma" type="number" placeholder="fator da soma">
-</div>
-    <h3>Você esta atualmente {{estado_login()}}</h3>
-    @if (estado_login()=="logado") {
-    <button (click)="deslogar()">deslogar</button>
-    }
-    @else {
-    <button (click)="logar()">logar</button>
-    }
+        @else if (media()<7) {
+        <div class="resultado">
+            <h3>Reprovou</h3>
+            <img class="imagem" src="https://cdn-icons-png.flaticon.com/512/12786/12786663.png" alt="">
+        </div>
+        }
+        @else {
+        <div class="resultado">
+            <h3>Valores ausentes ou invalidos</h3>
+            <img class="imagem"
+                src="https://static.vecteezy.com/system/resources/thumbnails/012/042/292/small/warning-sign-icon-transparent-background-free-png.png"
+                alt="">
+        </div>
+        }
+    </section>
 
-    <input [(ngModel)]="url_imagem" placeholder="Cole aqui o link">
+    <section class="cartao">
+        <h3 class="titulo-secao">Lista de comidas</h3>
+        <ul>
+            @for (comida of comidas(); track $index) {
+            <li>comidas: {{comida}}</li>
+            }@empty{
+            <p>Lista vazia</p>
+            }
+        </ul>
+    </section>
 
-    <img id="imagem_atividade_10" src={{url_imagem()}} alt="">
+    <section class="cartao">
+        <h3 class="titulo-secao">Contador</h3>
+        <div class="contador">
+            <h3 id="contador" (click)="resetar()">{{contador()}}</h3>
+            <button id="inclementar" (click)="inclementar()">inclementar</button>
+            <input [(ngModel)]="fator_soma" type="number" placeholder="fator da soma">
+        </div>
+    </section>
+
+    <section class="cartao">
+        <h3 class="titulo-secao">Sessão</h3>
+        <h3>Você esta atualmente {{estado_login()}}</h3>
+        @if (estado_login()=="logado") {
+        <button (click)="deslogar()">deslogar</button>
+        }
+        @else {
+        <button (click)="logar()">logar</button>
+        }
+    </section>
+
+    <section class="cartao">
+        <h3 class="titulo-secao">Imagem por URL</h3>
+        <input [(ngModel)]="url_imagem" placeholder="Cole aqui o link">
+        <img id="imagem_atividade_10" src={{url_imagem()}} alt="">
+    </section>
+
     <div class="batata">batata</div>
+
+</div>
