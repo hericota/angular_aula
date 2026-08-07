@@ -41,6 +41,7 @@ export class Marketplace {
       descricao: '',
       preco: null,
     });
+    alert("card criado")
   }
 
   cardTrueOrFalse() {
