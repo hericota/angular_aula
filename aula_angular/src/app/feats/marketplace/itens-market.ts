@@ -1,6 +1,5 @@
 export interface ItensMarket {
-    titulo:string;
-    descricao:string;
-    preco:number|null;
-
+  titulo: string;
+  descricao: string;
+  preco: number | null;
 }

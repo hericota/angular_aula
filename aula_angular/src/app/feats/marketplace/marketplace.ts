@@ -6,26 +6,44 @@ import { form, FormField } from '@angular/forms/signals';
   selector: 'app-marketplace',
   imports: [FormField],
   templateUrl: './marketplace.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './marketplace.css',
+  changeDetection: ChangeDetectionStrategy.Eager,
 })
 export class Marketplace {
-  protected novo_titulo = signal("");
-  protected nova_descricao = signal("");
-  protected novo_preco = signal(0);
+
+  protected card_criado = signal(false);
+
   produtoModel = signal<ItensMarket>({
     titulo: '',
     descricao: '',
     preco: null,
   });
-  protected card_criado = signal(false)
+
   produtoMarket = form(this.produtoModel);
+
+  produtoCadastrado = signal<ItensMarket | null>(null);
+
   cadastrarProduto(event: SubmitEvent) {
-    event.preventDefault()
-    this.card_criado.update((current)=>(true))
-  }
-  cardTrueOrFalse(){
-    this.card_criado.update((current)=>(false))
+    event.preventDefault();
+
+    // Salva os dados digitados
+    this.produtoCadastrado.set({
+      titulo: this.produtoMarket.titulo().value(),
+      descricao: this.produtoMarket.descricao().value(),
+      preco: this.produtoMarket.preco().value(),
+    });
+
+    this.card_criado.set(true);
+
+    // Limpa o formulário
+    this.produtoModel.set({
+      titulo: '',
+      descricao: '',
+      preco: null,
+    });
   }
 
+  cardTrueOrFalse() {
+    this.card_criado.set(false);
+  }
 }
