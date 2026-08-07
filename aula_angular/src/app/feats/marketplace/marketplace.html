@@ -31,7 +31,7 @@
 
   </form>
 
-  @if (card_criado()) {
+  @if (card_criado() && tudoIncerido()) {
     <div class="produto">
       <h2 id="titulo">
         <strong>{{ produtoCadastrado()?.titulo }}</strong>
@@ -47,4 +47,6 @@
     </div>
   }
 
+</div>
+<div>
 </div>

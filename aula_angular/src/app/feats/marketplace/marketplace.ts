@@ -10,7 +10,7 @@ import { form, FormField } from '@angular/forms/signals';
   changeDetection: ChangeDetectionStrategy.Eager,
 })
 export class Marketplace {
-
+  tudoIncerido = signal(true);
   protected card_criado = signal(false);
 
   produtoModel = signal<ItensMarket>({
@@ -25,26 +25,31 @@ export class Marketplace {
 
   cadastrarProduto(event: SubmitEvent) {
     event.preventDefault();
+    if (this.produtoMarket.titulo().value() == '' || this.produtoMarket.descricao().value() == '' || this.produtoMarket.preco().value() == null) {
+      this.tudoIncerido.set(false);
+    }
+    else {
+      this.tudoIncerido.set(true);
 
-    // Salva os dados digitados
-    this.produtoCadastrado.set({
-      titulo: this.produtoMarket.titulo().value(),
-      descricao: this.produtoMarket.descricao().value(),
-      preco: this.produtoMarket.preco().value(),
-    });
+      this.produtoCadastrado.set({
+        titulo: this.produtoMarket.titulo().value(),
+        descricao: this.produtoMarket.descricao().value(),
+        preco: this.produtoMarket.preco().value(),
+      });
 
-    this.card_criado.set(true);
+      this.card_criado.set(true);
 
-    // Limpa o formulário
-    this.produtoModel.set({
-      titulo: '',
-      descricao: '',
-      preco: null,
-    });
-    alert("card criado")
+
+      this.produtoModel.set({
+        titulo: '',
+        descricao: '',
+        preco: null,
+      });
+    }
   }
-
   cardTrueOrFalse() {
     this.card_criado.set(false);
   }
 }
+
+

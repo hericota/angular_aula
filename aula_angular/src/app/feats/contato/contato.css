@@ -1,3 +1,19 @@
+@keyframes led_falhando{
+    0%{
+        text-shadow: 0 0 5px #ddffc7, 0 0 10px #c4ffa9, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
+        color: #fafafa;
+    }
+    50%{
+        text-shadow: 0 0 5px #ddffc7, 0 0 10px #c4ffa9, 0 0 15px #FFF, 0 0 20px #2b920e, 0 0 30px #2b920e, 0 0 40px #2b920e, 0 0 55px #2b920e, 0 0 75px #2b920e;
+        color: #c7c7c7;
+    }
+    100%{
+        color: #dddddd;
+        text-shadow: 0 0 5px #ddffc7, 0 0 10px #c4ffa9, 0 0 15px #FFF, 0 0 20px #175007, 0 0 30px #175007, 0 0 40px #175007, 0 0 55px #175007, 0 0 75px #175007;
+    }
+
+}
+
 nav {
     display: flex;
     font-size: 3rem;
@@ -19,7 +35,8 @@ nav:hover {
 }
 
 nav a {
-    border-radius: 5px;
+    border: black 1px solid;
+    border-radius: 10px;
     padding: 15px;
     background-color: rgb(48, 235, 57);
     transition: 1s linear;
@@ -37,11 +54,11 @@ nav a:hover span{
     background: transparent;
     text-shadow: 0 0 5px #ddffc7, 0 0 10px #c4ffa9, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
     color: #fffdfd;
+    animation: led_falhando 50ms infinite;
 }
 
 nav a:not(:hover) {
     box-shadow: 0px 8px 16px 0px rgba(22, 204, 16, 0);
-    border-radius: 5px;
     background-color: rgb(63, 63, 63);
     transform: translateY(-10px);
     cursor: pointer;
@@ -57,5 +74,5 @@ nav a:active span{
     color: #efffeb;
     background: transparent;
     text-shadow: 0 0 5px #cdffab, 0 0 10px #cdffab, 0 0 15px #cdffab, 0 0 20px #cdffab, 0 0 30px #cdffab, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
-    color: #50be4c;
+
 }

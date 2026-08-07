@@ -7,6 +7,19 @@
     padding: 40px 20px;
 }
 
+@keyframes led_falhando{
+    0%{
+        text-shadow: 0 0 5px #ddffc7, 0 0 10px #c4ffa9, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
+    }
+    50%{
+        text-shadow: 0 0 5px #ddffc7, 0 0 10px #c4ffa9, 0 0 15px #FFF, 0 0 20px #2b920e, 0 0 30px #2b920e, 0 0 40px #2b920e, 0 0 55px #2b920e, 0 0 75px #2b920e;
+    }
+    100%{
+        text-shadow: 0 0 5px #ddffc7, 0 0 10px #c4ffa9, 0 0 15px #FFF, 0 0 20px #175007, 0 0 30px #175007, 0 0 40px #175007, 0 0 55px #175007, 0 0 75px #175007;
+    }
+
+}
+
 .home-hero {
     background-color: rgb(29, 29, 29);
     border: 2px solid rgba(0, 0, 0, 0.582);
@@ -31,7 +44,8 @@
 
 .home-hero h2 span {
     color: rgb(48, 235, 57);
-    text-shadow: 0 0 10px rgba(48, 235, 57, 0.5), 0 0 20px rgba(48, 235, 57, 0.3);
+    text-shadow: 0 0 5px rgba(48, 235, 57, 0.5), 0 0 10px rgba(48, 235, 57, 0.3);
+    animation: led_falhando 1s infinite;
 }
 
 .home-hero p {

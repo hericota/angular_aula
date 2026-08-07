@@ -14,18 +14,7 @@ export class Usuarios {
   novoNome = signal<string>('');
   novoIdade = signal<number | null>(null);
 
-  usuarios = signal<Users[]>([
-    {
-      id: 1,
-      nome: 'henrique',
-      idade: 70,
-    },
-    {
-      id: 2,
-      nome: 'henricão',
-      idade: 100,
-    },
-  ]);
+  usuarios = signal<Users[]>([]);
 
   adicionarUsuario() {
     if (this.novoNome().trim() === '' || this.novoIdade() === null) {
