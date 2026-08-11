@@ -1,1 +1,52 @@
-<p>media-alunos works!</p>
+<div class="container">
+
+    <h1>Cadastro de Alunos</h1>
+
+    <div class="formulario">
+
+        <label for="nome">Nome do aluno:</label>
+
+        <input id="nome" type="text" [ngModel]="nome()" (ngModelChange)="nome.set($event)" placeholder="Digite o nome">
+
+        <label for="media">Média final:</label>
+
+        <input id="media" type="number" min="0" max="10" step="0.1" [ngModel]="media()"
+            (ngModelChange)="media.set($event === '' ? null : +$event)" placeholder="Digite a média">
+
+        <button (click)="cadastrar()">
+            Cadastrar
+        </button>
+
+    </div>
+        @if (notaInvalida()) {
+        <div class="invalido">
+            <p>nota invalida</p>
+        </div>
+        }
+        @if (nomeInvalido()) {
+            <div class="invalido">
+            <p>nome invalido</p>
+            </div>
+        }
+    <div class="lista">
+
+        <h2>Alunos cadastrados</h2>
+
+        @for (aluno of alunos(); track $index) {
+
+        <div class="aluno" [class.aprovado]="aluno.media >= 7" [class.reprovado]="aluno.media < 7">
+
+            <span>
+                {{ aluno.nome }} - Média: {{ aluno.media }}
+            </span>
+
+            <strong>
+                {{ aluno.media >= 7 ? '(Aprovado)' : '(Reprovado)' }}
+            </strong>
+        </div>
+
+        }
+
+    </div>
+
+</div>
