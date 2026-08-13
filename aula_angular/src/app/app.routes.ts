@@ -5,6 +5,7 @@ import { Events } from './feats/events/events';
 import { Usuarios } from './feats/usuarios/usuarios';
 import { Marketplace } from './feats/marketplace/marketplace';
 import { MediaAlunos } from './feats/media-alunos/media-alunos';
+import { Login } from './feats/login/login';
 
 export const routes: Routes = [
     {path: "contatos", component:Contato},
@@ -13,6 +14,7 @@ export const routes: Routes = [
     {path:"usuarios",component:Usuarios},
     {path:"marketplace", component:Marketplace},
     {path:"MediaAlunos", component:MediaAlunos},
+    {path:"Login", component:Login},
     {path:'',redirectTo:"home",pathMatch:"full"}
 
 ];

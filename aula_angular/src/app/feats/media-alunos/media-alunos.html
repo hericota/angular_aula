@@ -18,16 +18,16 @@
         </button>
 
     </div>
-        @if (notaInvalida()) {
-        <div class="invalido">
-            <p>nota invalida</p>
-        </div>
-        }
         @if (nomeInvalido()) {
             <div class="invalido">
             <p>nome invalido</p>
             </div>
         }
+        @if (notaInvalida()) {
+            <div class="invalido">
+                <p>nota invalida</p>
+            </div>
+            }
     <div class="lista">
 
         <h2>Alunos cadastrados</h2>

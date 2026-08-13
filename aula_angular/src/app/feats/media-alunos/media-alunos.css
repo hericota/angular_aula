@@ -57,28 +57,32 @@ button:hover {
   padding: 15px;
   margin-top: 10px;
   border-radius: 8px;
-  background-color: #333;
+  background-color: #0f0f0f;
   display: flex;
   justify-content: space-between;
 }
 
 .aprovado {
-  color: #00ff66;
-  border-left: 5px solid #00ff66;
+  color: #2bff00;
+  border-left: 5px solid #00ff00;
 }
 
 .reprovado {
-  color: #ff4444;
-  border-left: 5px solid #ff4444;
+  color: #ff1212;
+  border-left: 5px solid #ff0000;
 }
 .invalido{
     justify-self: center;
     align-self: center;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    
     padding: 30px;
-    background-color:rgb(138, 138, 0);
-    border: 2px black solid;
+    background-color:rgb(14, 8, 49);
+    border: 2px rgba(0, 0, 0, 0.719) solid;
     margin-top: 20px;
+    border-radius: 10px;
+    width: 170px;
+    text-align: center;
     
 
 }
