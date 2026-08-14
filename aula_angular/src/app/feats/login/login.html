@@ -1,23 +1,32 @@
-<form>
+<form (submit)="cadastrar($event)">
 
-    <input type="text" [formField]="" placeholder="Nome completo">
-    <input type="email" [formField]="" placeholder="E-mail">
-    <input type="password" [formField]="" placeholder="senha">
-    <input type="password" [formField]="" placeholder="repita a senha">
-    <input type="date" [formField]="" placeholder="data de nascimento">
+    <input type="text" [formField]="login.nome" placeholder="Nome completo">
+    @if (!nomeCorreto()) {
+        <p>Nome incorreto</p>
+    }
+    <input type="email" [formField]="login.email" placeholder="E-mail">
+        @if (!emailCorreto()) {
+        <p>email incorreto</p>
+    }
+    <input type="password" [formField]="login.senha" placeholder="senha">
+        @if (!senhaCorreta()) {
+        <p>senha incorreto</p>
+    }
+    <input type="password" [formField]="login.confirmaSenha" placeholder="repita a senha">
+        @if (!confirmaSenhaCorreta()) {
+        <p>As senhas não são iguais</p>
+    }
+    <input type="text" [formField]="login.data" placeholder="nascimento 00/00/0000">
+
+    <button type="submit">cadastrar</button>
 
 </form>
-
-
-
-<!-- Crie um formulário de cadastro contendo os seguintes campos:
-• Nome completo
-• E-mail
-• Senha
-• Confirmação de senha
-• Data de nascimento
-Implemente validações apropriadas para cada campo (por exemplo: preenchimento
-obrigatório, formato válido de e-mail, correspondência entre senha e confirmação, etc.)
-Após o envio do formulário com dados válidos, armazene os usuários cadastrados em um
-array e exiba essa lista abaixo do formulário
-Estilize os usuários em cards -->
+<div class="cards">
+@for (usuario of usuarios(); track $index) {
+<div class="card">
+    <span>{{ usuario.nome }}</span>
+    <span>{{ usuario.email }}</span>
+    <span>{{ usuario.data }}</span>
+</div>
+}
+</div>
