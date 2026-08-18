@@ -1,6 +1,7 @@
-import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
+import { Component, signal, ChangeDetectionStrategy, inject } from '@angular/core';
 import { Users } from './users';
 import { FormsModule } from '@angular/forms';
+import { UsuariosService } from './usuarios-service';
 
 @Component({
   selector: 'app-usuarios',
@@ -14,7 +15,9 @@ export class Usuarios {
   novoNome = signal<string>('');
   novoIdade = signal<number | null>(null);
 
-  usuarios = signal<Users[]>([]);
+  protected readonly usuarioService= inject(UsuariosService)
+
+  indice= 1
 
   adicionarUsuario() {
     if (this.novoNome().trim() === '' || this.novoIdade() === null) {
@@ -22,19 +25,16 @@ export class Usuarios {
       return;
     }
 
-    const listaAtual = this.usuarios();
 
-    const proximoId = listaAtual.length > 0 ? listaAtual[listaAtual.length - 1].id + 1 : 1;
+
 
     const novoUsuario: Users = {
-      id: proximoId,
+      id: this.indice,
       nome: this.novoNome(),
       idade: this.novoIdade()!,
     };
 
-    this.usuarios.update((listaAtual) => [...listaAtual, novoUsuario]);
-    this.novoId.set(proximoId);
-    this.novoNome.set('');
-    this.novoIdade.set(null);
+    this.usuarioService.adicionarUsuario(novoUsuario)
+    this.indice++ 
   }
 }

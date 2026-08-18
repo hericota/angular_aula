@@ -6,44 +6,66 @@
 
         <label for="nome">Nome do aluno:</label>
 
-        <input id="nome" type="text" [ngModel]="nome()" (ngModelChange)="nome.set($event)" placeholder="Digite o nome">
+        <input
+            id="nome"
+            type="text"
+            [ngModel]="nome()"
+            (ngModelChange)="nome.set($event)"
+            placeholder="Digite o nome"
+        >
 
         <label for="media">Média final:</label>
 
-        <input id="media" type="number" min="0" max="10" step="0.1" [ngModel]="media()"
-            (ngModelChange)="media.set($event === '' ? null : +$event)" placeholder="Digite a média">
+        <input
+            id="media"
+            type="number"
+            min="0"
+            max="10"
+            step="0.1"
+            [ngModel]="media()"
+            (ngModelChange)="media.set($event === '' ? null : +$event)"
+            placeholder="Digite a média"
+        >
 
         <button (click)="cadastrar()">
             Cadastrar
         </button>
 
     </div>
-        @if (nomeInvalido()) {
-            <div class="invalido">
-            <p>nome invalido</p>
-            </div>
-        }
-        @if (notaInvalida()) {
-            <div class="invalido">
-                <p>nota invalida</p>
-            </div>
-            }
+
+    @if (nomeInvalido()) {
+        <div class="invalido">
+            <p>Nome inválido</p>
+        </div>
+    }
+
+    @if (notaInvalida()) {
+        <div class="invalido">
+            <p>Nota inválida</p>
+        </div>
+    }
+
     <div class="lista">
 
         <h2>Alunos cadastrados</h2>
 
-        @for (aluno of alunos(); track $index) {
+        @for (aluno of alunoService.alunos(); track $index) {
 
-        <div class="aluno" [class.aprovado]="aluno.media >= 7" [class.reprovado]="aluno.media < 7">
+            <div
+                class="aluno"
+                [class.aprovado]="aluno.media >= 7"
+                [class.reprovado]="aluno.media < 7"
+            >
 
-            <span>
-                {{ aluno.nome }} - Média: {{ aluno.media }}
-            </span>
+                <span>
+                    {{ aluno.nome }} - Média: {{ aluno.media }}
+                </span>
 
-            <strong>
-                {{ aluno.media >= 7 ? '(Aprovado)' : '(Reprovado)' }}
-            </strong>
-        </div>
+                <strong>
+                    {{ aluno.media >= 7 ? '(Aprovado)' : '(Reprovado)' }}
+                </strong>
+
+            </div>
 
         }
 

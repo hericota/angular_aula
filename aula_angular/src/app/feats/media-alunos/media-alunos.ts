@@ -1,7 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Aluno } from './aluno';
-
+import { MediaAlunosService } from './media-alunos-service';
 
 @Component({
   selector: 'app-root',
@@ -11,52 +11,47 @@ import { Aluno } from './aluno';
   styleUrl: './media-alunos.css',
 })
 export class MediaAlunos {
-[x: string]: any;
-   nome = signal('');
+
+  nome = signal('');
   media = signal<number | null>(null);
-  alunos = signal<Aluno[]>([]);
+
   notaInvalida = signal(false);
   nomeInvalido = signal(false);
+
+  constructor(public alunoService: MediaAlunosService) {}
 
   cadastrar() {
 
     const nomeAluno = this.nome().trim();
     const mediaAluno = this.media();
 
-
-
     if (nomeAluno === '') {
-      this.nomeInvalido.set(true)
+      this.nomeInvalido.set(true);
       return;
     }
-        else{
-      this.nomeInvalido.set(false)
-    }
+
+    this.nomeInvalido.set(false);
+
 
     if (mediaAluno === null) {
-      this.notaInvalida.set(true)
-      
+      this.notaInvalida.set(true);
       return;
-    }
-    else{
-      this.notaInvalida.set(false)
     }
 
     if (mediaAluno < 0 || mediaAluno > 10) {
-      this.notaInvalida.set(true)
+      this.notaInvalida.set(true);
       return;
     }
-        else{
-      this.notaInvalida.set(false)
-    }
 
-    this.alunos.update(lista => [
-      ...lista,
-      {
-        nome: nomeAluno,
-        media: mediaAluno
-      }
-    ]);
+    this.notaInvalida.set(false);
+
+    const aluno: Aluno = {
+      nome: nomeAluno,
+      media: mediaAluno
+    };
+
+
+    this.alunoService.cadastrar(aluno);
 
     this.nome.set('');
     this.media.set(null);

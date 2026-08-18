@@ -6,7 +6,7 @@
 </div>
 
 <div id="cards">
-    @for (user of usuarios(); track user.id) {
+    @for (user of usuarioService.usuarios(); track user.id) {
         <div class="usuarios">
             <p class="idUsuario">id: {{user.id}}</p>
             <p class="nomeUsuario">nome: {{user.nome}}</p>
