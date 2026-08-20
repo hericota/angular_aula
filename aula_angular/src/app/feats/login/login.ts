@@ -9,48 +9,27 @@ import { Usuario } from './usuario';
   styleUrl: './login.css',
 })
 export class Login {
-  nomeCorreto = signal<boolean>(true);
-  emailCorreto = signal<boolean>(true);
-  senhaCorreta = signal<boolean>(true);
-  confirmaSenhaCorreta = signal<boolean>(true);
-
+  clicado = signal<boolean>(false);
+  logado = signal<boolean>(false);
 
   UsuarioModel = signal<Usuario>({
-    nome: "",
     email: "",
     senha: "",
-    confirmaSenha: "",
-    data: "",
   })
   login = form(this.UsuarioModel, (s) => {
   })
-  protected usuarios = signal<Usuario[]>([]);
+
+  
   cadastrar(event: Event) {
     event.preventDefault();
-
-    this.nomeCorreto.set(this.UsuarioModel().nome !== "");
-
-    this.emailCorreto.set(this.UsuarioModel().email !== "");
-
-    this.senhaCorreta.set(this.UsuarioModel().senha !== "");
-
-    this.confirmaSenhaCorreta.set(
-      this.UsuarioModel().confirmaSenha !== "" &&
-      this.UsuarioModel().confirmaSenha === this.UsuarioModel().senha
-    );
+    this.logado.set(false);
+    this.clicado.set(true)
 
     if (
-      this.nomeCorreto() &&
-      this.emailCorreto() &&
-      this.senhaCorreta() &&
-      this.confirmaSenhaCorreta()
+      this.UsuarioModel().email == "henriquegdall@gmail.com" &&
+      this.UsuarioModel().senha == "1234"
     ) {
-      const usuario = this.UsuarioModel();
-
-      this.usuarios.update(valor => [...valor, usuario]);
+      this.logado.set(true);
     }
   }
-
-
-
 }

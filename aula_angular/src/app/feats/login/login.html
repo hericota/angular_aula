@@ -1,32 +1,19 @@
 <form (submit)="cadastrar($event)">
-
-    <input type="text" [formField]="login.nome" placeholder="Nome completo">
-    @if (!nomeCorreto()) {
-        <p>Nome incorreto</p>
-    }
     <input type="email" [formField]="login.email" placeholder="E-mail">
-        @if (!emailCorreto()) {
-        <p>email incorreto</p>
-    }
     <input type="password" [formField]="login.senha" placeholder="senha">
-        @if (!senhaCorreta()) {
-        <p>senha incorreto</p>
-    }
-    <input type="password" [formField]="login.confirmaSenha" placeholder="repita a senha">
-        @if (!confirmaSenhaCorreta()) {
-        <p>As senhas não são iguais</p>
-    }
-    <input type="text" [formField]="login.data" placeholder="nascimento 00/00/0000">
-
     <button type="submit">cadastrar</button>
 
 </form>
-<div class="cards">
-@for (usuario of usuarios(); track $index) {
-<div class="card">
-    <span>{{ usuario.nome }}</span>
-    <span>{{ usuario.email }}</span>
-    <span>{{ usuario.data }}</span>
-</div>
+@if (clicado()) {
+    @if (logado()) {
+        <div>
+            <h3>Usuario logado</h3>
+        </div>
+        <img src="https://conteudo.imguol.com.br/3f/2020/11/17/kid-bengala-via-instagram-1605617856164_v2_4x3.jpg" alt="">
+    }
+    @else {
+        <div>
+        <h3>Erro no login</h3>
+        </div>
+    }
 }
-</div>
