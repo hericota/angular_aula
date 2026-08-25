@@ -11,7 +11,7 @@ import { form, FormField, required } from "@angular/forms/signals";
 })
 export class FormularioPost {
   postModel = signal<Post>({
-    userId: 0,
+    userId: null,
     title: '',
     body: '',
   });
