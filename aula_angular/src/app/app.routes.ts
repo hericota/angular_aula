@@ -7,6 +7,7 @@ import { Marketplace } from './feats/marketplace/marketplace';
 import { MediaAlunos } from './feats/media-alunos/media-alunos';
 import { Login } from './feats/login/login';
 import { FormularioPost } from './feats/formulario-post/formulario-post';
+import { PutRequest } from './feats/put-request/put-request';
 
 export const routes: Routes = [
     {path: "contatos", component:Contato},
@@ -17,6 +18,7 @@ export const routes: Routes = [
     {path:"MediaAlunos", component:MediaAlunos},
     {path:"Login", component:Login},
     {path:"formularioPost", component:FormularioPost},
+    {path:"PutRequest",component:PutRequest},
     {path:'',redirectTo:"home",pathMatch:"full"}
 
 ];

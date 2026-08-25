@@ -1,9 +1,9 @@
-<form>
+<form (submit)="submitPost($event)">
     <h3>Post</h3>
-    <input type="text" placeholder="Digite o ID" [formField]="postForm.userId">
+    <input type="number" placeholder="Digite o ID" [formField]="postForm.userId">
     @if (postForm.userId().touched() && postForm.userId().invalid()) {
     @for (error of postForm.userId().errors(); track error.kind) {
-            <p id="alerta">{{error.message}}</p>
+    <p id="alerta">{{error.message}}</p>
     }
     }
 
@@ -21,5 +21,5 @@
     }
     }
 
-    <button (click)="submitPost()">Enviar Post</button>
+    <button>Enviar Post</button>
 </form>
