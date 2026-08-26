@@ -8,6 +8,7 @@ import { MediaAlunos } from './feats/media-alunos/media-alunos';
 import { Login } from './feats/login/login';
 import { FormularioPost } from './feats/formulario-post/formulario-post';
 import { PutRequest } from './feats/put-request/put-request';
+import { Delete } from './feats/delete/delete';
 
 export const routes: Routes = [
     {path: "contatos", component:Contato},
@@ -19,6 +20,7 @@ export const routes: Routes = [
     {path:"Login", component:Login},
     {path:"formularioPost", component:FormularioPost},
     {path:"PutRequest",component:PutRequest},
+    {path:"deletando", component:Delete},
     {path:'',redirectTo:"home",pathMatch:"full"}
 
 ];

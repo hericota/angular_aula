@@ -1,14 +1,14 @@
 import { inject, Service } from '@angular/core';
-import { Put } from './put';
+import { DeleteInterface } from './delete-interface';
 import { HttpClient } from '@angular/common/http';
 
 @Service()
-export class Putting {
+export class Deletando {
     private readonly httpClient = inject(HttpClient);
     protected readonly urlapi ="https://jsonplaceholder.typicode.com/posts///";
 
-    cadastrarPut(putCadastrado: Put){
+    cadastrarDelete(deleteCadastrado: DeleteInterface){
     
-return this.httpClient.put(`${this.urlapi}/${putCadastrado.id}`,putCadastrado)
+return this.httpClient.delete(`${this.urlapi}/${deleteCadastrado.id}`)
     }
 }

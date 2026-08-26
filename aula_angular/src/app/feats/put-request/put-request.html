@@ -17,14 +17,14 @@
     }
 
 
-    <input type="text" placeholder="Digite o título do post" [formField]="putForm.title">
+    <input type="text" placeholder="Digite o título para atualizar" [formField]="putForm.title">
     @if (putForm.title().touched() && putForm.title().invalid()) {
     @for (error of putForm.title().errors(); track error.kind) {
     <p id="alerta">{{error.message}}</p>
     }
     }
 
-    <input type="text" placeholder="Digite o conteúdo do post" [formField]="putForm.body">
+    <input type="text" placeholder="Digite o conteúdo para atualizar" [formField]="putForm.body">
     @if (putForm.body().touched() && putForm.body().invalid()) {
     @for (error of putForm.body().errors(); track error.kind) {
     <p id="alerta">{{error.message}}</p>

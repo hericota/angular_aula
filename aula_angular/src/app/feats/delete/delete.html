@@ -1,0 +1,12 @@
+<form (submit)="submitDelete($event)">
+    <h3>delete</h3>
+
+    <input type="number" placeholder="Digite o ID para deletar" [formField]="deleteForm.id">
+    @if (deleteForm.id().touched() && deleteForm.id().invalid()) {
+    @for (error of deleteForm.id().errors(); track error.kind) {
+    <p id="alerta">{{error.message}}</p>
+    }
+    }
+
+    <button>Deletar</button>
+</form>

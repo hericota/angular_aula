@@ -27,16 +27,16 @@ export class PutRequest {
   submitPut(event: SubmitEvent) {
     event.preventDefault()
 
-    const post = this.putModel();
-    this.consumoService.cadastrarPut(put) .subscribe({
+    const put = this.putModel();
+    this.consumoService.cadastrarPut(put).subscribe({
       next: () => {
-
         this.putModel.set({
           id:null,
           userId: null,
           title: '',
           body: '',
         });
+        console.log("Você conseguiu")
         this.putForm().reset()
       },
       error:()=>{
