@@ -29,7 +29,8 @@ export class PutRequest {
 
     const put = this.putModel();
     this.consumoService.cadastrarPut(put).subscribe({
-      next: () => {
+      next: (response) => {
+        alert("O Id atualizado é "+response.id + ", O userId é "+ response.userId+ ", o Titulo é = "+ response.title + ", o body é " + response.body)
         this.putModel.set({
           id:null,
           userId: null,

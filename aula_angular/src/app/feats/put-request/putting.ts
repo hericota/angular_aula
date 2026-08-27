@@ -9,6 +9,6 @@ export class Putting {
 
     cadastrarPut(putCadastrado: Put){
     
-return this.httpClient.put(`${this.urlapi}/${putCadastrado.id}`,putCadastrado)
+        return this.httpClient.put<Put>(`${this.urlapi}/${putCadastrado.id}`,putCadastrado)
     }
 }
