@@ -9,6 +9,7 @@ import { Login } from './feats/login/login';
 import { FormularioPost } from './feats/formulario-post/formulario-post';
 import { PutRequest } from './feats/put-request/put-request';
 import { Delete } from './feats/delete/delete';
+import { GetRequest } from './feats/get-request/get-request';
 
 export const routes: Routes = [
     {path: "contatos", component:Contato},
@@ -21,6 +22,7 @@ export const routes: Routes = [
     {path:"formularioPost", component:FormularioPost},
     {path:"PutRequest",component:PutRequest},
     {path:"deletando", component:Delete},
+    {path:"getRequest", component:GetRequest},
     {path:'',redirectTo:"home",pathMatch:"full"}
 
 ];

@@ -1,0 +1,36 @@
+
+<button id="recarregarPosts" (click)="recarregarPosts()">Recarregar</button>
+@if (consumoService.postsDetais.isLoading()) {
+    <div class="loader"></div>
+}
+@if (consumoService.postsDetais.error()) {
+    <p>deu erro</p>
+}
+
+
+
+
+<div class="posts-container">
+  @for (post of consumoService.postsDetais.value(); track post.id) {
+    <div class="post-card">
+
+      <div class="post-header">
+        <span class="post-id">#{{ post.id }}</span>
+        <span class="user-id">User {{ post.id }}</span>
+      </div>
+
+      <div class="post-content">
+        <h2>{{ post.name }}</h2>
+
+        <p>
+          Email: {{ post.email }}
+        </p>
+        <p>          Numero: {{post.phone}}</p>
+      </div>
+
+      <div class="post-footer">
+        <span>Publicado por usuário {{ post.username }}</span>
+      </div>
+    </div>
+  }
+</div>
