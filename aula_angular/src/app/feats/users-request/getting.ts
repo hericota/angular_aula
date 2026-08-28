@@ -6,11 +6,10 @@ import { PostGetResponse } from './post-get-response';
 export class Getting {
     private readonly httpClient = inject(HttpClient);
 
-    private readonly urlApi = 'https://jsonplaceholder.typicode.com/posts'
+    private readonly urlApi = 'https://jsonplaceholder.typicode.com/users'
 
     readonly postsDetais = httpResource<PostGetResponse[]> (
         () => this.urlApi,
         {defaultValue: []}
     )
-
 }

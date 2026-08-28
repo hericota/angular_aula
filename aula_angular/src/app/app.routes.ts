@@ -10,6 +10,8 @@ import { FormularioPost } from './feats/formulario-post/formulario-post';
 import { PutRequest } from './feats/put-request/put-request';
 import { Delete } from './feats/delete/delete';
 import { GetRequest } from './feats/get-request/get-request';
+import { UsersRequest } from './feats/users-request/users-request';
+import { formularioUsers } from './feats/formulario-users/formulario-users';
 
 export const routes: Routes = [
     {path: "contatos", component:Contato},
@@ -23,6 +25,8 @@ export const routes: Routes = [
     {path:"PutRequest",component:PutRequest},
     {path:"deletando", component:Delete},
     {path:"getRequest", component:GetRequest},
+    {path:"usersRequest", component:UsersRequest},
+    {path:"formularioUsers", component:formularioUsers},
     {path:'',redirectTo:"home",pathMatch:"full"}
 
 ];

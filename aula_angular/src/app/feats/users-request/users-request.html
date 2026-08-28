@@ -4,7 +4,7 @@
     <div class="loader"></div>
 }
 @if (consumoService.postsDetais.error()) {
-    <p>erro</p>
+    <p>deu erro</p>
 }
 
 
@@ -16,19 +16,20 @@
 
       <div class="post-header">
         <span class="post-id">#{{ post.id }}</span>
-        <span class="user-id">User {{ post.userId }}</span>
+        <span class="user-id">User {{ post.id }}</span>
       </div>
 
       <div class="post-content">
-        <h2>{{ post.title }}</h2>
+        <h2>{{ post.name }}</h2>
 
         <p>
-          {{ post.body }}
+          Email: {{ post.email }}
         </p>
+        <p>          Numero: {{post.phone}}</p>
       </div>
 
       <div class="post-footer">
-        <span>Publicado por usuário {{ post.userId }}</span>
+        <span>Publicado por usuário {{ post.username }}</span>
       </div>
     </div>
   }
